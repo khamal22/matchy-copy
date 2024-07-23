@@ -11,20 +11,30 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+var animal = {
+  species: 'dog',
+  name: "hunter",
+  noises: [],
+};
 
+console.log(animal);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+var noises = ['bark'];
+noises.unshift('whimper')
+noises.splice(noises.length, 0, 'growling', 'howling')
 
+console.log(noises)
 
-
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////S///////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+animal['noises'] = noises;
+noises.push('coughing')
+console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
@@ -48,14 +58,41 @@
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var animals = [];
+var duck = {
+  species: 'duck',
+  name: 'Jerome',
+  noises: ['quack', 'honk', 'sneeze', 'woosh']
+}
+var alligator = {
+  species: 'albino',
+  name: 'ally',
+  noises: ['grunt', 'growl']
+}
+var whale = {
+  species: 'blue',
+  name: 'ruffles',
+  noises: ['pulses', 'groans',]
+}
+animals.push(alligator)
+animals.push(duck)
+animals.push(whale)
+animals.push(animal);
+console.log(animals);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// i chose an array to handle the list of friends because i feel that it would be to easy way to manipulate the data 
 
+var friends = [];
 
+function getRandom(animals){
+  return animals[(Math.random() * friends.length)];
+
+}
+getRandom()
+console.log(friends);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
@@ -68,11 +105,11 @@
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 var animal, noises, animals, friends, getRandom;
-if((typeof process !== 'undefined') &&
-   (typeof process.versions.node !== 'undefined')) {
-     module.exports.animal = animal || null;
-     module.exports.noises = noises || null;
-     module.exports.animals = animals || null;
-     module.exports.friends = friends || null;
-     module.exports.getRandom = getRandom || null;
+if ((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+  module.exports.animal = animal || null;
+  module.exports.noises = noises || null;
+  module.exports.animals = animals || null;
+  module.exports.friends = friends || null;
+  module.exports.getRandom = getRandom || null;
 }
