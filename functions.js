@@ -12,7 +12,24 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+/*
+I:a function that takes 2 parameters the array of animals and a string 
+O:returns the animals object if the animal with that name exist otherwise null
+C:
+E:
 
+*/    
+function search(animals,name ){
+    //looping through the animals array 
+        for (let i = 0; i < animals.length; i++) {
+            //returns animal object if it exist 
+            if (animals[i].name === name) {
+              return animals[i];
+            }
+          }
+          //return null if it doesnt exist 
+          return null;
+    }
 
 
 //////////////////////////////////////////////////////////////////////

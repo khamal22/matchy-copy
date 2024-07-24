@@ -84,15 +84,20 @@ console.log(animals);
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 // i chose an array to handle the list of friends because i feel that it would be to easy way to manipulate the data 
-
+/*
+I:the animal array 
+O:a random index of the input array 
+C:use math.random 
+E:
+*/
 var friends = [];
 
-function getRandom(animals){
-  return animals[(Math.random() * friends.length)];
 
+function getRandom(animals){
+ 
+  return Math.floor(Math.random() * animals.length);
 }
 getRandom()
-console.log(friends);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
