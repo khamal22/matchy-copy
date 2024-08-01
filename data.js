@@ -14,7 +14,7 @@
 var animal = {
   species: 'dog',
   name: "hunter",
-  noises: [],
+  noises: [], 
 };
 
 console.log(animal);

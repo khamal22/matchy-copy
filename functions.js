@@ -35,12 +35,27 @@ function search(animals,name ){
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function replace(animals, name, newAnimal) {
+  for (let i = 0; i < animals.length; i++) {
+      if (animals[i].name === name) {
+          animals[i] = newAnimal;
+          return true; // Return true to indicate success
+      }
+  }
+  return false; // Return false if no match was found
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function remove(animals, name) {
+  const initialLength = animals.length;
+  // Filter out the animal with the matching name
+  const updatedAnimals = animals.filter(animal => animal.name !== name);
+  // Return true if something was removed, false otherwise
+  return updatedAnimals.length < initialLength ? updatedAnimals : false;
+}
 
 
 
