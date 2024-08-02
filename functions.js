@@ -50,11 +50,22 @@ function replace(animals, name, newAnimal) {
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(animals, name) {
-  const initialLength = animals.length;
-  // Filter out the animal with the matching name
-  const updatedAnimals = animals.filter(animal => animal.name !== name);
-  // Return true if something was removed, false otherwise
-  return updatedAnimals.length < initialLength ? updatedAnimals : false;
+  // Check if the name parameter is valid
+  if (!name || name.length === 0) {
+      console.log("Name must be a non-empty string.");
+      return;
+  }
+
+  // Find the index of the animal with the given name
+  const index = animals.findIndex(animal => animal.name === name);
+
+  // If an animal with the given name is found, remove it
+  if (index !== -1) {
+      animals.splice(index, 1);
+      console.log(`Removed animal with name: ${name}`);
+  } else {
+      console.log(`Animal with name "${name}" not found.`);
+  }
 }
 
 
@@ -62,7 +73,30 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function add(animals, animal){
+// Check if the animal object has a name property with length > 0
+if (!animal.name || animal.name.length === 0) {
+  console.log("Animal must have a name with length greater than 0.");
+  return;
+}
 
+// Check if the animal object has a species property with length > 0
+if (!animal.species || animal.species.length === 0) {
+  console.log("Animal must have a species with length greater than 0.");
+  return;
+}
+
+// Check if an animal with the same name already exists using a for loop
+for (let i = 0; i < animals.length; i++) {
+  if (animals[i].name === animal.name) {
+      console.log(`Animal with name "${animal.name}" already exists.`);
+      return;
+  }
+}
+
+// Add the new animal to the array
+animals.push(animal);
+}
 
 
 /**
