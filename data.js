@@ -98,7 +98,13 @@ function getRandom(animals){
   return Math.floor(Math.random() * animals.length);
 }
 getRandom()
+var randomIndex = getRandom(animals);
+var randomAnimal = animals[randomIndex];
+friends.push(randomAnimal.name);
+animals[0]['friends'] = friends;
 
+console.log(friends);
+console.log(animals[0]);
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
