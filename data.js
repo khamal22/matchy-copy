@@ -61,7 +61,7 @@ console.log(animal);
 var animals = [];
 var duck = {
   species: 'duck',
-  name: 'Jerome',
+  name: 'mack',
   noises: ['quack', 'honk', 'sneeze', 'woosh']
 }
 var alligator = {
