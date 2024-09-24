@@ -46,13 +46,39 @@ function replace(animals, name, replacement) {
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function remove(animals, name) {
+  for (var i = 0; i < animals.length; i++) {
+      if (animals[i] === name) {
+          animals.splice(i, 1);
+          i--; // Decrement index to check the new element at the same position
+      }
+  }
+}
 
 
-
-//////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function add(animals, animal) {
+  // Check that the animal object has 'name' and 'species' properties with length > 0
+  if (animal && typeof animal.name === 'string' && animal.name.length > 0 &&
+      typeof animal.species === 'string' && animal.species.length > 0) {
 
+      // Check for uniqueness of the name
+      var isUnique = true;
+      for (var i = 0; i < animals.length; i++) {
+          if (animals[i].name === animal.name) {
+              isUnique = false;
+          
+          }
+      }
+
+      // Add the animal to the array if it is unique
+      if (isUnique) {
+          animals.push(animal);
+      }
+  }
+}
 
 
 /**
