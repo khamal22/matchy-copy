@@ -47,14 +47,14 @@ function replace(animals, name, replacement) {
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(animals, name) {
-  for (var i = 0; i < animals.length; i++) {
-      if (animals[i] === name) {
-          animals.splice(i, 1);
-          i--; // Decrement index to check the new element at the same position
-      }
-  }
+  for (let i = 0; i < animals.length; i++) {
+    if (animals[i].name === name) {
+        animals.splice(i, 1); // Remove the animal from the array
+        return; // Exit once the removal is done
+    }
 }
-
+// Do nothing if not found
+}
 
 /////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
